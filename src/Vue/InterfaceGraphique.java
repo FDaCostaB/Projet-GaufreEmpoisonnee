@@ -1,22 +1,23 @@
 package Vue;
 
 import Modele.Jeu;
-import Patterns.Observateur;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Observable;
+import java.util.Observer;
 
-public class InterfaceGraphique implements Runnable, Observateur, InterfaceUtilisateur {
+public class InterfaceGraphique implements Runnable, Observer, InterfaceG {
 	Jeu jeu;
 	CollecteurEvenements controle;
 	boolean maximized;
 	JFrame frame;
-	JLabel pas,pousse;
-	NiveauGraphiqueSwing ng;
+	//JLabel pas,pousse;
+	GaufreGraphique gaufreG;
 
 	InterfaceGraphique(Jeu j, CollecteurEvenements c) {
 		jeu = j;
-		jeu.ajouteObservateur(this);
+		jeu.addObserver(this);
 		controle = c;
 		controle.fixerInterfaceUtilisateur(this);
 	}
@@ -27,25 +28,19 @@ public class InterfaceGraphique implements Runnable, Observateur, InterfaceUtili
 
 	public void run() {
 		frame = new JFrame("Sokoban");
-		ng = new NiveauGraphiqueSwing(jeu);
-		frame.add(ng);
+		gaufreG = new GaufreGraphique(jeu);
+		frame.add(gaufreG);
 
 		Box boite = Box.createVerticalBox();
 
 		JLabel titre = new JLabel("Sokoban");
-		ajouterCompCentre(boite,titre);
-		boite.add(Box.createGlue());
 
-		ng.addMouseListener(new AdaptateurSouris(ng, controle));
-		frame.addKeyListener(new AdaptateurClavier(controle));
-		Timer time = new Timer(16, new AdaptateurTemps(controle));
-		time.start();
+		gaufreG.addMouseListener(new AdaptateurSouris(gaufreG, controle));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(500, 300);
 		frame.setVisible(true);
 	}
 
-	@Override
 	public void basculePleinEcran() {
 		GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		GraphicsDevice device = env.getDefaultScreenDevice();
@@ -58,4 +53,10 @@ public class InterfaceGraphique implements Runnable, Observateur, InterfaceUtili
 		}
 	}
 
+	@Override
+	public void update(Observable o, Object arg) {
+		//pas.setText("Pas : "+ jeu.niveau().pas);
+		//pousse.setText("Poussées : "+ jeu.niveau().pousse);
+		gaufreG.repaint();
+	}
 }
