@@ -13,6 +13,7 @@ public class Jeu extends Observable {
 		this(6,8);
 	}
 	public Jeu(int l,int c) {
+		height=l;width=c;
 		creerNiveau(l,c);
 	}
 
@@ -33,6 +34,7 @@ public class Jeu extends Observable {
 				grille[i][j] = true; //On met dans l'état mangé tout les morceauqui doivent l'être
 			}
 		}
+		setChanged();
 		notifyObservers();
 	}
 

@@ -1,4 +1,4 @@
-package Vue;
+package InterfaceGraphique;
 
 public interface CollecteurEvenements {
 		void clicSouris(int l, int c);

@@ -1,9 +1,7 @@
-package Controleur;
+package InterfaceGraphique;
 
 import Modele.Coup;
 import Modele.Jeu;
-import Vue.CollecteurEvenements;
-import Vue.InterfaceG;
 
 public class ControleurMediateur implements CollecteurEvenements {
     InterfaceG ig;
@@ -15,6 +13,7 @@ public class ControleurMediateur implements CollecteurEvenements {
 
     @Override
     public void clicSouris(int l, int c) {
+        System.out.println("Clic en ( l : " +l+" , c : "+c+" )" );
         Coup cp = new Coup(l,c);
         jeu.jouerCoup(cp);
     }

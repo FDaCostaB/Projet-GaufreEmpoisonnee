@@ -1,4 +1,4 @@
-package Vue;
+package InterfaceGraphique;
 
 import Modele.Jeu;
 
@@ -12,7 +12,6 @@ public class InterfaceGraphique implements Runnable, Observer, InterfaceG {
 	CollecteurEvenements controle;
 	boolean maximized;
 	JFrame frame;
-	//JLabel pas,pousse;
 	GaufreGraphique gaufreG;
 
 	InterfaceGraphique(Jeu j, CollecteurEvenements c) {
@@ -27,7 +26,7 @@ public class InterfaceGraphique implements Runnable, Observer, InterfaceG {
 	}
 
 	public void run() {
-		frame = new JFrame("Sokoban");
+		frame = new JFrame("Gauffre empoisonée");
 		gaufreG = new GaufreGraphique(jeu);
 		frame.add(gaufreG);
 

@@ -1,9 +1,6 @@
-import Controleur.ControleurMediateur;
+import InterfaceGraphique.ControleurMediateur;
 import Modele.Jeu;
-import Vue.InterfaceGraphique;
-
-import java.io.File;
-import java.io.InputStream;
+import InterfaceGraphique.InterfaceGraphique;
 
 class gaufreEmpoisonee {
 

@@ -1,4 +1,4 @@
-package Vue;
+package InterfaceGraphique;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;

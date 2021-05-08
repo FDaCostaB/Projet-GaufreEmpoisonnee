@@ -1,4 +1,4 @@
-package Vue;
+package InterfaceGraphique;
 
 import Modele.Jeu;
 
@@ -15,7 +15,11 @@ public class GaufreGraphique extends JComponent {
     }
     public void remplirRect(int i, int j, Color color){
         drawable.setColor(color);
-        drawable.fillRect(i,j,tailleC,tailleC);
+        drawable.fillRect(j,i,tailleC,tailleC);
+    }
+    public void remplirRect(int i, int j, int width, int height, Color color){
+        drawable.setColor(color);
+        drawable.fillRect(j,i,width,height);
     }
 
     public void dessinerTrait(int x1,int y1,int x2, int y2){
@@ -25,20 +29,24 @@ public class GaufreGraphique extends JComponent {
         int i=0,j=0;
         drawable.setColor(Color.BLACK);
         while(i<jeu.height) {
-            while (!jeu.grille()[i][j] && j < jeu.width) {
+            while (j < jeu.width && !jeu.grille()[i][j] ) {
                 j++;
             }
-            dessinerTrait(0, i * tailleC, j * tailleC, i * tailleC);
+            dessinerTrait(0, i * tailleC, j * tailleC-1, i * tailleC);
             i++;
+            j=0;
         }
+        dessinerTrait(0, tailleC* jeu.height-1, tailleC* jeu.width-1, tailleC* jeu.height-1);
         i=0;j=0;
         while(j<jeu.width) {
-            while (!jeu.grille()[i][j] && j < jeu.height) {
+            while ( i < jeu.height && !jeu.grille()[i][j]) {
                 i++;
             }
-            dessinerTrait(j * tailleC, 0, j * tailleC, i * tailleC);
+            dessinerTrait(j * tailleC, 0, j * tailleC, i * tailleC-1);
             j++;
+            i=0;
         }
+        dessinerTrait(tailleC* jeu.width-1, 0, tailleC* jeu.width-1, tailleC* jeu.height-1);
     }
 
     @Override
@@ -59,14 +67,18 @@ public class GaufreGraphique extends JComponent {
         int lCase=largeur/jeu.width;
         tailleC=Math.min(hCase,lCase);
 
+
+
+        remplirRect(0,0, tailleC* jeu.width, tailleC*jeu.height,Color.ORANGE);
+
         dessinerGrille();
 
         for(int i=0;i<jeu.height;i++){
             for(int j=0;j<jeu.width;j++){
-                if(jeu.grille()[i][j]) remplirRect(i*tailleC,j*tailleC,Color.ORANGE);
-                else remplirRect(i*tailleC,j*tailleC,Color.WHITE);
+                if(jeu.grille()[i][j]) remplirRect(i*tailleC,j*tailleC,Color.WHITE);
             }
         }
+        remplirRect(0,0,Color.GREEN);
     }
 
     public int tailleC() {
