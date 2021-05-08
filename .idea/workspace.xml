@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f9f08a49-1a87-452c-867c-5306ceecf8a2" name="Default Changelist" comment="Interface graphique en cours">
+      <change beforePath="$PROJECT_DIR$/src/Controleur/ControleurMediateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/ControleurMediateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modele/Jeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modele/Jeu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vue/AdaptateurCommande.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/AdaptateurCommande.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vue/AdaptateurSouris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/AdaptateurSouris.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vue/CollecteurEvenements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/CollecteurEvenements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vue/GaufreGraphique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/GaufreGraphique.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vue/InterfaceG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/InterfaceG.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vue/InterfaceGraphique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/InterfaceGraphique.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gaufreEmpoisonee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gaufreEmpoisonee.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1qk91v1gsZFpC6QQkG0Z02psdnu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fabie\Documents\Fac\S6\PROG6\sokoban\src\Controleur" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Vue" />
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="GaufreEmpoisonee" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="gaufreEmpoisonee" />
+      <module name="Projet-GaufreEmpoisonnee" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f9f08a49-1a87-452c-867c-5306ceecf8a2" name="Default Changelist" comment="" />
+      <created>1617612510199</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617612510199</updated>
+      <workItem from="1617612512219" duration="1582000" />
+      <workItem from="1617631309019" duration="6442000" />
+      <workItem from="1617637847267" duration="3746000" />
+      <workItem from="1617641790309" duration="1867000" />
+      <workItem from="1617718253685" duration="2221000" />
+      <workItem from="1617913265689" duration="4507000" />
+      <workItem from="1617950635175" duration="10435000" />
+      <workItem from="1617965357781" duration="294000" />
+      <workItem from="1618297097840" duration="8441000" />
+      <workItem from="1618305699774" duration="34000" />
+      <workItem from="1618996812943" duration="2676000" />
+      <workItem from="1619001357115" duration="3145000" />
+      <workItem from="1619100483084" duration="530000" />
+      <workItem from="1619122873595" duration="1409000" />
+      <workItem from="1619767853826" duration="981000" />
+      <workItem from="1619781092211" duration="326000" />
+      <workItem from="1619786890083" duration="322000" />
+      <workItem from="1619787334679" duration="613000" />
+      <workItem from="1619790109752" duration="264000" />
+      <workItem from="1619871234722" duration="19000" />
+      <workItem from="1619872830825" duration="74000" />
+      <workItem from="1620470697494" duration="1091000" />
+      <workItem from="1620471998322" duration="145000" />
+      <workItem from="1620472183577" duration="6091000" />
+      <workItem from="1620480976308" duration="1612000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1620471842215</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1620471842215</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Initial commit">
+      <created>1620472051496</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1620472051496</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Initial commit v3">
+      <created>1620472267249</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1620472267249</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Interface graphique en cours">
+      <created>1620478335539</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1620478335539</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="Initial commit v3" />
+    <MESSAGE value="Interface graphique en cours" />
+    <option name="LAST_COMMIT_MESSAGE" value="Interface graphique en cours" />
+  </component>
+</project>
