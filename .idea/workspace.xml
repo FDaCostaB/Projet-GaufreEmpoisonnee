@@ -2,26 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9f08a49-1a87-452c-867c-5306ceecf8a2" name="Default Changelist" comment="Interface graphique en cours">
-      <change afterPath="$PROJECT_DIR$/res/defaut.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controleur/IA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controleur/IAAleatoire.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Structures/Iterateur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Structures/IterateurListe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Structures/IterateurTableau.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Structures/Sequence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Structures/SequenceListe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Structures/SequenceTableau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Projet-GaufreEmpoisonnee.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Projet-GaufreEmpoisonnee.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IHM/AdaptateurCommande.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IHM/AdaptateurInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Projet-GaufreEmpoisonnee/Global/Configuration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projet-GaufreEmpoisonnee/Global/Configuration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projet-GaufreEmpoisonnee/InterfaceGraphique/ControleurMediateur.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projet-GaufreEmpoisonnee/InterfaceGraphique/GaufreGraphique.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projet-GaufreEmpoisonnee/InterfaceGraphique/GaufreGraphique.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projet-GaufreEmpoisonnee/Modele/Jeu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projet-GaufreEmpoisonnee/Modele/Jeu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projet-GaufreEmpoisonnee/InterfaceGraphique/AdaptateurCommande.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projet-GaufreEmpoisonnee/InterfaceGraphique/AdaptateurSouris.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projet-GaufreEmpoisonnee/InterfaceGraphique/CollecteurEvenements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projet-GaufreEmpoisonnee/InterfaceGraphique/GaufreGraphique.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projet-GaufreEmpoisonnee/InterfaceGraphique/InterfaceG.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projet-GaufreEmpoisonnee/InterfaceGraphique/InterfaceGraphique.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projet-GaufreEmpoisonnee/Modele/Coup.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projet-GaufreEmpoisonnee/Modele/Jeu.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Projet-GaufreEmpoisonnee/gaufreEmpoisonee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projet-GaufreEmpoisonnee/gaufreEmpoisonee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controleur/ControleurMediateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controleur/ControleurMediateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controleur/IA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controleur/IA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controleur/IAAleatoire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controleur/IAAleatoire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Global/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Global/Configuration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InterfaceGraphique/ControleurMediateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controleur/ControleurMediateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InterfaceGraphique/GaufreGraphique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceGraphique/GaufreGraphique.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modele/Jeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modele/Jeu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfaceGraphique/AdaptateurCommande.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IHM/AdaptateurIA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfaceGraphique/AdaptateurSouris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IHM/AdaptateurSouris.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfaceGraphique/CollecteurEvenements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controleur/CollecteurEvenements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfaceGraphique/GaufreGraphique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IHM/GaufreGraphique.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfaceGraphique/InterfaceG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IHM/InterfaceG.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfaceGraphique/InterfaceGraphique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IHM/InterfaceGraphique.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modele/Coup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Moteur/Coup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modele/Jeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Moteur/Jeu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gaufreEmpoisonee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gaufreEmpoisonee.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,11 +72,17 @@
       <recent name="C:\Users\fabie\Documents\Fac\S6\PROG6\sokoban\src\Controleur" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="IHM" />
       <recent name="Vue" />
       <recent name="" />
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="NimRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="nim.task.build.to.cache" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GaufreEmpoisonee" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="gaufreEmpoisonee" />
       <module name="Projet-GaufreEmpoisonnee" />
@@ -88,11 +99,6 @@
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="NimRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="nim.task.build.to.cache" enabled="true" />
       </method>
     </configuration>
   </component>

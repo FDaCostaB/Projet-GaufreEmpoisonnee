@@ -1,6 +1,6 @@
 import Controleur.ControleurMediateur;
-import Modele.Jeu;
-import InterfaceGraphique.InterfaceGraphique;
+import Moteur.Jeu;
+import IHM.InterfaceGraphique;
 
 class gaufreEmpoisonee {
 

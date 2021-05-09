@@ -1,4 +1,6 @@
-package InterfaceGraphique;
+package IHM;
+
+import Controleur.CollecteurEvenements;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;

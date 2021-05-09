@@ -1,6 +1,6 @@
-package InterfaceGraphique;
+package IHM;
 
-import Modele.Jeu;
+import Moteur.Jeu;
 
 import javax.swing.*;
 import java.awt.*;
@@ -79,6 +79,7 @@ public class GaufreGraphique extends JComponent {
             }
         }
         remplirRect(0,0,Color.GREEN);
+
     }
 
     public int tailleC() {

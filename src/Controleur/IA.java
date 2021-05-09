@@ -1,10 +1,7 @@
 package Controleur;
 
-import InterfaceGraphique.CollecteurEvenements;
-import Modele.Coup;
-import Modele.Jeu;
-
-import javax.swing.*;
+import Moteur.Coup;
+import Moteur.Jeu;
 
 abstract class IA{
 

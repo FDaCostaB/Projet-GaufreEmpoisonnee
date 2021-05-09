@@ -1,8 +1,7 @@
 package Controleur;
 
-import InterfaceGraphique.CollecteurEvenements;
-import Modele.Coup;
-import Modele.Jeu;
+import Moteur.Coup;
+import Moteur.Jeu;
 
 import java.util.Random;
 

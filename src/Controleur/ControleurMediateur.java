@@ -1,10 +1,12 @@
 package Controleur;
 
 import Global.Configuration;
-import InterfaceGraphique.CollecteurEvenements;
-import InterfaceGraphique.InterfaceG;
-import Modele.Coup;
-import Modele.Jeu;
+import IHM.InterfaceG;
+import Moteur.Coup;
+import Moteur.Jeu;
+
+import java.awt.event.ItemEvent;
+import java.util.NoSuchElementException;
 
 public class ControleurMediateur implements CollecteurEvenements {
     InterfaceG ig;
@@ -16,9 +18,35 @@ public class ControleurMediateur implements CollecteurEvenements {
 
     public ControleurMediateur(Jeu j) {
         jeu = j;
+        iaActive = false;
+    }
+
+    public boolean iaActive(){
+        return iaActive;
+    }
+
+    public void fixerIA(String com){
+        iaActive = true;
+        switch (com){
+            case "facile":
+                ia = new IAAleatoire(jeu);
+                ig.updateCommencer();
+                break;
+            case "moyen":
+                break;
+            case "difficile":
+                break;
+            default:
+                throw new NoSuchElementException();
+        }
         iaActive = Boolean.parseBoolean(Configuration.instance().lis("IAActive"));
         iaLenteur = Integer.parseInt(Configuration.instance().lis("IALenteur"));
-        ia = new IAAleatoire(jeu);
+    }
+
+    public void activeIA(int state){
+        if(state == ItemEvent.DESELECTED) {
+            iaActive = false;
+        }
     }
 
     @Override
@@ -28,7 +56,7 @@ public class ControleurMediateur implements CollecteurEvenements {
         jeu.jouerCoup(cp);
 
         if (iaActive){
-            jeu.jouerCoup(cp);
+            jeu.jouerCoup(ia.coupIA(jeu));
             System.out.println("IA a cliqué sur ( l : " +cp.l+" , c : "+cp.c+" )" );
         }
     }
@@ -41,6 +69,17 @@ public class ControleurMediateur implements CollecteurEvenements {
                 break;
             case "fullscreen":
                 ig.basculePleinEcran();
+                break;
+            case "commencer":
+                ig.lancerPartie();
+                break;
+            case "recommencer":
+                ig.retourMenu();
+                break;
+            case "facile":
+            case "moyen":
+            case "difficile":
+                fixerIA(c);
                 break;
             case "undo":
                 break;

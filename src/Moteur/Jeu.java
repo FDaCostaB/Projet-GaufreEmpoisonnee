@@ -1,20 +1,21 @@
-package Modele;
+package Moteur;
 
 
 
-import javax.swing.*;
 import java.util.Observable;
 
 public class Jeu extends Observable {
 	boolean [][]grille;
 	int height, width;
+	public int joueur;
 
 	public Jeu() {
 		this(6,8);
 	}
 	public Jeu(int l,int c) {
 		height=l;width=c;
-		creerNiveau(l,c);
+		creerNiveau(height,width);
+		joueur = 0;
 	}
 
 	public void creerNiveau(int l,int c) {
@@ -27,19 +28,29 @@ public class Jeu extends Observable {
 
 	}
 
+	public void reinitialiser(){
+		creerNiveau(height,width);
+		joueur = 0;
+	}
+
 	public void jouerCoup(Coup c) {
 		if(!coupValide(c)) return;
 		for(int i=c.l;i<height;i++){
 			for(int j=c.c;j<width;j++){
-				grille[i][j] = true; //On met dans l'état mangé tout les morceauqui doivent l'être
+				grille[i][j] = true; //On met dans l'état mangé tout les morceau qui doivent l'être
 			}
 		}
+		joueur = (joueur+1)%2;
 		setChanged();
 		notifyObservers();
 	}
 
 	public boolean coupValide(Coup c){
 		return !grille[c.l][c.c];
+	}
+
+	public boolean testFin(){
+		return grille[0][1]&&grille[1][0];
 	}
 
 	public boolean[][] grille(){

@@ -1,4 +1,4 @@
-package Modele;
+package Moteur;
 
 public class Coup {
 	public int l,c;

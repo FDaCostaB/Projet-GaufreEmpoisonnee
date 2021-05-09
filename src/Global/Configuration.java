@@ -22,14 +22,13 @@ public class Configuration {
 			prop.load(propIn);
 			System.out.println(prop);
 			String home = System.getProperty("user.home");
-			FileInputStream f = new FileInputStream(home + File.separator + ".sokoban");
+			FileInputStream f = new FileInputStream(home + File.separator + ".gaufre");
 			prop = new Properties(prop);
 			prop.load(f);
 		} catch (Exception e) {
 			System.err.println("Erreur lors de la lecture de la configuration : " + e);
 		}
 		System.out.println(prop);
-		System.out.println(prop.getProperty("Sequence"));
 	}
 
 	public static Configuration instance() {
