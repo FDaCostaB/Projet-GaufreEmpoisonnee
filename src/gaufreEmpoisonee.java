@@ -1,4 +1,4 @@
-import InterfaceGraphique.ControleurMediateur;
+import Controleur.ControleurMediateur;
 import Modele.Jeu;
 import InterfaceGraphique.InterfaceGraphique;
 

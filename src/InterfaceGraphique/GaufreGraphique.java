@@ -28,25 +28,25 @@ public class GaufreGraphique extends JComponent {
     public void dessinerGrille(){
         int i=0,j=0;
         drawable.setColor(Color.BLACK);
-        while(i<jeu.height) {
-            while (j < jeu.width && !jeu.grille()[i][j] ) {
+        while(i<jeu.longueur()) {
+            while (j < jeu.largeur() && !jeu.grille()[i][j] ) {
                 j++;
             }
             dessinerTrait(0, i * tailleC, j * tailleC-1, i * tailleC);
             i++;
             j=0;
         }
-        dessinerTrait(0, tailleC* jeu.height-1, tailleC* jeu.width-1, tailleC* jeu.height-1);
+        dessinerTrait(0, tailleC* jeu.longueur()-1, tailleC* jeu.largeur()-1, tailleC* jeu.longueur()-1);
         i=0;j=0;
-        while(j<jeu.width) {
-            while ( i < jeu.height && !jeu.grille()[i][j]) {
+        while(j<jeu.largeur()) {
+            while ( i < jeu.longueur() && !jeu.grille()[i][j]) {
                 i++;
             }
             dessinerTrait(j * tailleC, 0, j * tailleC, i * tailleC-1);
             j++;
             i=0;
         }
-        dessinerTrait(tailleC* jeu.width-1, 0, tailleC* jeu.width-1, tailleC* jeu.height-1);
+        dessinerTrait(tailleC* jeu.largeur()-1, 0, tailleC* jeu.largeur()-1, tailleC* jeu.longueur()-1);
     }
 
     @Override
@@ -63,18 +63,18 @@ public class GaufreGraphique extends JComponent {
         drawable.clearRect(0, 0, largeur, hauteur);
 
         //Calcul de la taille d'une case
-        int hCase=hauteur/jeu.height;
-        int lCase=largeur/jeu.width;
+        int hCase=hauteur/jeu.longueur();
+        int lCase=largeur/jeu.largeur();
         tailleC=Math.min(hCase,lCase);
 
 
 
-        remplirRect(0,0, tailleC* jeu.width, tailleC*jeu.height,Color.ORANGE);
+        remplirRect(0,0, tailleC* jeu.largeur(), tailleC*jeu.longueur(),Color.ORANGE);
 
         dessinerGrille();
 
-        for(int i=0;i<jeu.height;i++){
-            for(int j=0;j<jeu.width;j++){
+        for(int i=0;i<jeu.longueur();i++){
+            for(int j=0;j<jeu.largeur();j++){
                 if(jeu.grille()[i][j]) remplirRect(i*tailleC,j*tailleC,Color.WHITE);
             }
         }
