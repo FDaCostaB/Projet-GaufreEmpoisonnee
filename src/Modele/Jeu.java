@@ -7,7 +7,7 @@ import java.util.Observable;
 
 public class Jeu extends Observable {
 	boolean [][]grille;
-	public int height, width;
+	int height, width;
 
 	public Jeu() {
 		this(6,8);
@@ -38,7 +38,7 @@ public class Jeu extends Observable {
 		notifyObservers();
 	}
 
-	boolean coupValide(Coup c){
+	public boolean coupValide(Coup c){
 		return !grille[c.l][c.c];
 	}
 
@@ -46,6 +46,12 @@ public class Jeu extends Observable {
 		return grille;
 	}
 
+	public int longueur(){
+		return height;
+	}
 
+	public int largeur(){
+		return width;
+	}
 
 }
