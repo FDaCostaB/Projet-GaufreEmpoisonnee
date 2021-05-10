@@ -5,7 +5,7 @@ import Global.Configuration;
 
 public class Jeu extends HistoriqueAPile<Commande> {
 	public Niveau niv;
-	int height, width;
+	private int height, width;
 	public int joueur;
 
 	public Jeu() {
@@ -19,7 +19,7 @@ public class Jeu extends HistoriqueAPile<Commande> {
 	}
 
 	public void reinitialiser(){
-		niv.initNiveau(height,width);
+		niv.initNiveau(getHeight(),getWidth());
 		joueur = 0;
 	}
 
@@ -67,11 +67,18 @@ public class Jeu extends HistoriqueAPile<Commande> {
 	}
 
 	public int longueur(){
-		return height;
+		return getHeight();
 	}
 
 	public int largeur(){
+		return getWidth();
+	}
+	public int getWidth() {
 		return width;
 	}
+	public int getHeight() {
+		return height;
+	}
+
 
 }

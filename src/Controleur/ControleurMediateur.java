@@ -37,6 +37,8 @@ public class ControleurMediateur implements CollecteurEvenements {
                 ig.updateCommencer();
                 break;
             case "moyen":
+            	 ia = new IAmoyen(jeu);
+                 ig.updateCommencer();
                 break;
             case "difficile":
                 break;
