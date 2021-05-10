@@ -31,14 +31,14 @@ public class IAmoyen extends IA{
 			Coup c;
 			for(int i=0;i < origin.largeur();i++) {
 				for(int j=0;j < origin.getHeight();j++) {
-					c = new Coup(j,i);
+					c = new Coup(j,i,this.j);
 					
 					if(nouveau.coupValide(c) && !origin.coupValide(c)) {
 						return c;
 					}
 				}
 			}
-			return new Coup(0,0);
+			return new Coup(0,0,this.j);
 		}
 	    
 	    private int minimaxA(Noeud n, HashMap<Integer,Integer> r, int profondeur) {
@@ -97,8 +97,8 @@ public class IAmoyen extends IA{
 			}
 		}
 		
-	
-		Coup coupIA(Jeu j) {
+		@Override
+		public Coup coupIA(Jeu j) {
 			//ajoute de ca pour tester un cas ou ca plante si on le laisse tourner
 			boolean[][] test = j.grille();
 			int htest = j.getHeight();
@@ -106,11 +106,11 @@ public class IAmoyen extends IA{
 			if(ltest == 2 && htest == 2 && test[1][1] != false && test[0][1] == false && test[1][0] == false) {
 				int testrand = r.nextInt(2);
 				if(testrand == 1)
-					return new Coup(1,0);
+					return new Coup(1,0,this.j);
 				else 
-					return new Coup(0,1);
+					return new Coup(0,1,this.j);
 			}else if (test[0][1] !=false  && test[1][0] != false)
-				return new Coup(0,0);
+				return new Coup(0,0,this.j);
 			
 			ArbreConfig a = new ArbreConfig(TabConverter.ToInt(j)); // construction de l'arbre des configurations
 			HashMap<Integer,Integer> memo = new HashMap<Integer,Integer>();
