@@ -19,11 +19,11 @@ public class InterfaceGraphique implements Runnable, Observer, InterfaceG {
 	boolean ia = false;
 	Box boite,boiteInfo;
 	JLabel info;
-	JButton commencer;
+	JButton commencer,undo,redo;
 
 	InterfaceGraphique(Jeu j, CollecteurEvenements c) {
 		jeu = j;
-		jeu.addObserver(this);
+		jeu.niv.addObserver(this);
 		controle = c;
 		controle.fixerInterfaceUtilisateur(this);
 	}
@@ -141,7 +141,19 @@ public class InterfaceGraphique implements Runnable, Observer, InterfaceG {
 		JButton recommencer = new JButton("Recommencer");
 		recommencer.addActionListener(new AdaptateurCommande(controle,"recommencer"));
 
+		undo = new JButton("Annuler");
+		undo.addActionListener(new AdaptateurCommande(controle,"undo"));
+
+		redo = new JButton("Refaire");
+		redo.addActionListener(new AdaptateurCommande(controle,"redo"));
+
+		undo.setEnabled(false);
+		redo.setEnabled(false);
+
 		boiteInfo.add(info);
+		boiteInfo.add(Box.createHorizontalGlue());
+		boiteInfo.add(undo);
+		boiteInfo.add(redo);
 		boiteInfo.add(Box.createHorizontalGlue());
 		boiteInfo.add(recommencer);
 
@@ -174,6 +186,8 @@ public class InterfaceGraphique implements Runnable, Observer, InterfaceG {
 	@Override
 	public void update(Observable o, Object arg) {
 		info.setText("Au tour du joueur n°"+(jeu.joueur+1));
+		undo.setEnabled(jeu.reculable());
+		redo.setEnabled(jeu.avancable());
 		if(jeu.testFin()){
 			jeu.joueur = (jeu.joueur+1)%2;
 			info.setText("Victoire du joueur n°"+(jeu.joueur+1));

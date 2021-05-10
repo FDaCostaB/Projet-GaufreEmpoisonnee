@@ -17,7 +17,7 @@ public class AdaptateurInterface implements ItemListener {
 
 	@Override
 	public void itemStateChanged(ItemEvent e) {
-		ig.activeIA();
 		control.activeIA(e.getStateChange());
+		ig.activeIA();
 	}
 }

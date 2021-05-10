@@ -14,15 +14,25 @@ class IAAleatoire extends IA {
         this.j=j;
     }
 
-    Coup coupIA(Jeu j) {
+    public Coup coupIA(Jeu j) {
         int l;
         int c;
         Coup cp ;
 
-        l = r.nextInt(j.longueur());
-        c = r.nextInt(j.largeur());
-        cp = new Coup(l,c);
+        l = j.longueur();
+        c = j.largeur();
 
+        do{
+            l = r.nextInt(l>0?l:1);
+            c = r.nextInt(c>0?c:1);
+            cp = new Coup(l,c,j);
+            if(!j.coupValide(cp) && l==0 && c==0){
+                l = j.longueur();
+                c = j.largeur();
+            }
+        }while(!j.coupValide(cp));
+
+        System.out.println("IA a cliqué sur ( l : " +cp.l+" , c : "+cp.c+" )" );
         return cp;
     }
 }

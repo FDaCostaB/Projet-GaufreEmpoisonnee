@@ -1,6 +1,7 @@
 package IHM;
 
 import Moteur.Jeu;
+import Moteur.Niveau;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,9 +28,10 @@ public class GaufreGraphique extends JComponent {
     }
     public void dessinerGrille(){
         int i=0,j=0;
+        Niveau curr = jeu.niv;
         drawable.setColor(Color.BLACK);
         while(i<jeu.longueur()) {
-            while (j < jeu.largeur() && !jeu.grille()[i][j] ) {
+            while (j < jeu.largeur() && !curr.estMange(i,j) ) {
                 j++;
             }
             dessinerTrait(0, i * tailleC, j * tailleC-1, i * tailleC);
@@ -39,7 +41,7 @@ public class GaufreGraphique extends JComponent {
         dessinerTrait(0, tailleC* jeu.longueur()-1, tailleC* jeu.largeur()-1, tailleC* jeu.longueur()-1);
         i=0;j=0;
         while(j<jeu.largeur()) {
-            while ( i < jeu.longueur() && !jeu.grille()[i][j]) {
+            while ( i < jeu.longueur() && !curr.estMange(i,j)) {
                 i++;
             }
             dessinerTrait(j * tailleC, 0, j * tailleC, i * tailleC-1);
@@ -75,7 +77,7 @@ public class GaufreGraphique extends JComponent {
 
         for(int i=0;i<jeu.longueur();i++){
             for(int j=0;j<jeu.largeur();j++){
-                if(jeu.grille()[i][j]) remplirRect(i*tailleC,j*tailleC,Color.WHITE);
+                if(jeu.niv.estMange(i,j)) remplirRect(i*tailleC,j*tailleC,Color.WHITE);
             }
         }
         remplirRect(0,0,Color.GREEN);

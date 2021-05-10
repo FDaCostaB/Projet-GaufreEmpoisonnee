@@ -1,10 +1,12 @@
 package Controleur;
 
 import Global.Configuration;
+import IHM.AdaptateurTemps;
 import IHM.InterfaceG;
 import Moteur.Coup;
 import Moteur.Jeu;
 
+import javax.swing.*;
 import java.awt.event.ItemEvent;
 import java.util.NoSuchElementException;
 
@@ -15,6 +17,8 @@ public class ControleurMediateur implements CollecteurEvenements {
     IA ia;
     Coup cp;
     int iaLenteur;
+    Timer tempsIA;
+    boolean iaPeutJouer;
 
     public ControleurMediateur(Jeu j) {
         jeu = j;
@@ -41,23 +45,51 @@ public class ControleurMediateur implements CollecteurEvenements {
         }
         iaActive = Boolean.parseBoolean(Configuration.instance().lis("IAActive"));
         iaLenteur = Integer.parseInt(Configuration.instance().lis("IALenteur"));
+        tempsIA = new Timer(3000,new AdaptateurTemps(ia,jeu,this));
+        tempsIA.setRepeats(false);
     }
 
     public void activeIA(int state){
         if(state == ItemEvent.DESELECTED) {
-            iaActive = false;
+            iaActive = true;
         }
     }
 
     @Override
     public void clicSouris(int l, int c) {
         System.out.println("Clic en ( l : " +l+" , c : "+c+" )" );
-        cp = new Coup(l,c);
-        jeu.jouerCoup(cp);
+        cp = new Coup(l,c,jeu);
+        jeu.jouerCoup(cp,false);
 
-        if (iaActive){
-            jeu.jouerCoup(ia.coupIA(jeu));
-            System.out.println("IA a cliqué sur ( l : " +cp.l+" , c : "+cp.c+" )" );
+        if (iaActive && !jeu.testFin()){
+            System.out.println("Coup de l'ia en préparation" );
+            iaPeutJouer=true;
+            tempsIA.restart();
+        }
+    }
+
+    public void jouerCoupIA(Coup cp){
+        if(iaPeutJouer)
+        jeu.jouerCoup(cp,true);
+    }
+
+    @Override
+    public void undo() {
+        jeu.undo();
+
+        if(iaActive){
+            iaPeutJouer=false;
+            System.out.println("Coup de l'ia annulé" );
+        }
+    }
+
+    @Override
+    public void redo() {
+        jeu.redo();
+        if (iaActive && !jeu.testFin()){
+            System.out.println("Coup de l'ia en préparation" );
+            iaPeutJouer=true;
+            tempsIA.restart();
         }
     }
 
@@ -82,10 +114,10 @@ public class ControleurMediateur implements CollecteurEvenements {
                 fixerIA(c);
                 break;
             case "undo":
+                undo();
                 break;
             case "redo":
-                break;
-            case "next":
+                redo();
                 break;
             default:
                 return false;

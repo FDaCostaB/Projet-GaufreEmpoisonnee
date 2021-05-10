@@ -1,11 +1,10 @@
 package Moteur;
 
 
+import Global.Configuration;
 
-import java.util.Observable;
-
-public class Jeu extends Observable {
-	boolean [][]grille;
+public class Jeu extends HistoriqueAPile<Commande> {
+	public Niveau niv;
 	int height, width;
 	public int joueur;
 
@@ -14,47 +13,57 @@ public class Jeu extends Observable {
 	}
 	public Jeu(int l,int c) {
 		height=l;width=c;
-		creerNiveau(height,width);
+		niv = new Niveau(l,c);
+		niv.initNiveau(height,width);
 		joueur = 0;
-	}
-
-	public void creerNiveau(int l,int c) {
-		grille = new boolean[l][c];
-		for(int i=0;i<l;i++){
-			for(int j=0;j<c;j++){
-				grille[i][j] = false; //grille[i][j] indique si le morceau à été mangé par défaut il ne l'est pas
-			}
-		}
-
 	}
 
 	public void reinitialiser(){
-		creerNiveau(height,width);
+		niv.initNiveau(height,width);
 		joueur = 0;
 	}
 
-	public void jouerCoup(Coup c) {
+	public void jouerCoup(Coup c, boolean ia) {
 		if(!coupValide(c)) return;
-		for(int i=c.l;i<height;i++){
-			for(int j=c.c;j<width;j++){
-				grille[i][j] = true; //On met dans l'état mangé tout les morceau qui doivent l'être
-			}
-		}
+		if(ia) reset();
+		else nouveau(c);
 		joueur = (joueur+1)%2;
-		setChanged();
-		notifyObservers();
+		niv.jouerCoup(c);
+	}
+
+	public void rejouerCoup(Coup c) {
+		if(!coupValide(c)) return;
+		joueur = (joueur+1)%2;
+		niv.jouerCoup(c);
+	}
+
+	public void redo(){
+		if(avancable())avancer();
+		else System.out.println("Impossible de refaire");
+	}
+
+	public void undo(){
+		if(reculable())reculer();
+		else System.out.println("Impossible d'annuler");
+	}
+
+	public void restaurer(int l, int c) {
+		niv.restaurer(l,c) ; //On met dans l'état mangé tout les morceau qui doivent l'être
+	}
+
+	public void maj(){
+		niv.maj();
+	}
+	public void changeJoueur(){
+		joueur = (joueur+1)%2;
 	}
 
 	public boolean coupValide(Coup c){
-		return !grille[c.l][c.c];
+		return niv.coupValide(c);
 	}
 
 	public boolean testFin(){
-		return grille[0][1]&&grille[1][0];
-	}
-
-	public boolean[][] grille(){
-		return grille;
+		return niv.testFin();
 	}
 
 	public int longueur(){

@@ -3,7 +3,7 @@ package Controleur;
 import Moteur.Coup;
 import Moteur.Jeu;
 
-abstract class IA{
+public abstract class IA{
 
-    abstract Coup coupIA(Jeu j);
+    public abstract Coup coupIA(Jeu j);
 }
