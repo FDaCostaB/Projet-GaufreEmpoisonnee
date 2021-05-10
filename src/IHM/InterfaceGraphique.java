@@ -189,8 +189,14 @@ public class InterfaceGraphique implements Runnable, Observer, InterfaceG {
 		undo.setEnabled(jeu.reculable());
 		redo.setEnabled(jeu.avancable());
 		if(jeu.testFin()){
-			jeu.joueur = (jeu.joueur+1)%2;
-			info.setText("Victoire du joueur n°"+(jeu.joueur+1));
+			if(jeu.abandon()){
+				info.setText("Abandon du joueur n°"+(jeu.joueur+1));
+			} else {
+				jeu.joueur = (jeu.joueur+1)%2;
+				info.setText("Victoire du joueur n°"+(jeu.joueur+1));
+			}
+			undo.setEnabled(false);
+			redo.setEnabled(false);
 		}
 		gaufreG.repaint();
 	}

@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9f08a49-1a87-452c-867c-5306ceecf8a2" name="Default Changelist" comment="Historique en jeu fonctionnel">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f9f08a49-1a87-452c-867c-5306ceecf8a2" name="Default Changelist" comment="Integration de l'IA moyen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projet-GaufreEmpoisonnee/gaufreEmpoisonee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Global/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Global/Configuration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IHM/InterfaceGraphique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IHM/InterfaceGraphique.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Moteur/Jeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Moteur/Jeu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Moteur/Niveau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Moteur/Niveau.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +119,7 @@
       <workItem from="1620554521458" duration="3000" />
       <workItem from="1620555403003" duration="178000" />
       <workItem from="1620590978824" duration="380000" />
-      <workItem from="1620618755639" duration="7359000" />
+      <workItem from="1620618755639" duration="8142000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1620471842215</created>
@@ -166,7 +163,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620625199860</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Integration de l'IA moyen">
+      <created>1620626342716</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1620626342716</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Integration de l'IA moyen">
+      <created>1620626417625</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1620626417625</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,7 +201,8 @@
     <MESSAGE value="Interface graphique en cours" />
     <MESSAGE value="IHM finalisé" />
     <MESSAGE value="Historique en jeu fonctionnel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Historique en jeu fonctionnel" />
+    <MESSAGE value="Integration de l'IA moyen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Integration de l'IA moyen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -4,6 +4,7 @@ public class Jeu extends HistoriqueAPile<Commande> {
 	public Niveau niv;
 	private int height, width;
 	public int joueur;
+	boolean abandon;
 
 	public Jeu() {
 		this(6,8);
@@ -29,11 +30,17 @@ public class Jeu extends HistoriqueAPile<Commande> {
 	}
 
 	public void jouerCoup(Coup c, boolean ia) {
-		if(!coupValide(c)) return;
-		if(ia) reset();
-		else nouveau(c);
-		joueur = (joueur+1)%2;
-		niv.jouerCoup(c);
+		if(c.c==0 && c.l == 0){
+			abandon=true;
+			niv.maj();
+		}
+		if(!testFin()){
+			if(!coupValide(c)) return;
+			if(ia) reset();
+			else nouveau(c);
+			joueur = (joueur+1)%2;
+			niv.jouerCoup(c);
+		}
 	}
 
 	public void rejouerCoup(Coup c) {
@@ -68,7 +75,7 @@ public class Jeu extends HistoriqueAPile<Commande> {
 	}
 
 	public boolean testFin(){
-		return niv.testFin();
+		return niv.testFin() || abandon;
 	}
 
 	public int longueur(){
@@ -87,5 +94,9 @@ public class Jeu extends HistoriqueAPile<Commande> {
 
 	public boolean[][] grille(){
 		return niv.grille();
+	}
+
+	public boolean abandon(){
+		return abandon;
 	}
 }
