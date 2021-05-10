@@ -6,16 +6,23 @@ import java.util.Observable;
 
 public class Jeu extends Observable {
 	boolean [][]grille;
-	int height, width;
+	private int height;
+	private int width;
 	public int joueur;
 
 	public Jeu() {
 		this(6,8);
 	}
 	public Jeu(int l,int c) {
-		height=l;width=c;
-		creerNiveau(height,width);
+		setHeight(l);setWidth(c);
+		creerNiveau(getHeight(),getWidth());
 		joueur = 0;
+	}
+	
+	public Jeu( boolean [][] tab,int hauteur, int largeur) {
+		this.grille =tab;
+		this.height = hauteur;
+		this.width = largeur;
 	}
 
 	public void creerNiveau(int l,int c) {
@@ -29,14 +36,14 @@ public class Jeu extends Observable {
 	}
 
 	public void reinitialiser(){
-		creerNiveau(height,width);
+		creerNiveau(getHeight(),getWidth());
 		joueur = 0;
 	}
 
 	public void jouerCoup(Coup c) {
 		if(!coupValide(c)) return;
-		for(int i=c.l;i<height;i++){
-			for(int j=c.c;j<width;j++){
+		for(int i=c.l;i<getHeight();i++){
+			for(int j=c.c;j<getWidth();j++){
 				grille[i][j] = true; //On met dans l'état mangé tout les morceau qui doivent l'être
 			}
 		}
@@ -44,7 +51,11 @@ public class Jeu extends Observable {
 		setChanged();
 		notifyObservers();
 	}
-
+    
+	public boolean estManger(Coup c) {
+		return grille[c.l][c.c] != false;
+	}
+	
 	public boolean coupValide(Coup c){
 		return !grille[c.l][c.c];
 	}
@@ -58,11 +69,24 @@ public class Jeu extends Observable {
 	}
 
 	public int longueur(){
-		return height;
+		return getHeight();
 	}
 
 	public int largeur(){
+		return getWidth();
+	}
+	public int getWidth() {
 		return width;
 	}
+	public void setWidth(int width) {
+		this.width = width;
+	}
+	public int getHeight() {
+		return height;
+	}
+	public void setHeight(int height) {
+		this.height = height;
+	}
+	
 
 }
