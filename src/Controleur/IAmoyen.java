@@ -97,30 +97,7 @@ public class IAmoyen extends IA{
 			}
 		}
 		
-	    
-	    Coup jouerCoupFacile(Jeu jeu) {
-			int i, j;
-	        int count = 0;
-	        i = r.nextInt(jeu.getHeight());
-	        j = r.nextInt(jeu.getWidth());
-	        // l'IA essaye de ne pas se suicider et de manger quelque chose
-	        while (!jeu.coupValide(new Coup(i,j)) && count < 100 || (i<=1 && j<=1)) {
-	            i = r.nextInt(jeu.getHeight());
-	            j = r.nextInt(jeu.getWidth());
-	            count++;
-	        }
-	        if (count == 100) {
-	        	return new Coup(0,0); //si elle n'as rien trouvée elle se suicide
-	        }
-	        //plateau.manger(new Couple(i,j));
-			if(jeu.grille()[i][j] == false)
-				return new Coup(i,j);
-			else 
-				return new Coup(0,0);
-
-		}   
-		
-
+	
 		Coup coupIA(Jeu j) {
 			//ajoute de ca pour tester un cas ou ca plante si on le laisse tourner
 			boolean[][] test = j.grille();
@@ -144,7 +121,8 @@ public class IAmoyen extends IA{
 					cp = a.racine().filsTaggue(); //recuperations des solutions
 				}
 				else {
-					return jouerCoupFacile(j);
+					IAAleatoire ia = new IAAleatoire(j);
+					return ia.coupIA(j);
 				}
 				int rand = r.nextInt(cp.size()); //choix d'une solution admissible aleatoire
 				Jeu nouveau = TabConverter.ToTab(cp.get(rand).valeur()); //traduction de la solution en Plateau
@@ -152,7 +130,9 @@ public class IAmoyen extends IA{
 				//plateau.manger(res); //Appliquer solution
 				return res;
 			} else {
-				return jouerCoupFacile(j);
+				IAAleatoire ia = new IAAleatoire(j);
+				return ia.coupIA(j);
+				
 			}
 		
 		
