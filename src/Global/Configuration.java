@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 public class Configuration {
 	private static Configuration instance = null;
 	Properties prop;
+
 	public static InputStream charge(String nom) {
 		return ClassLoader.getSystemClassLoader().getResourceAsStream(nom);
 	}
@@ -46,7 +47,7 @@ public class Configuration {
 	}
 
 	public Logger logger() {
-		Logger log = Logger.getLogger("Sokoban.Logger");
+		Logger log = Logger.getLogger("Gaufre.Logger");
 		log.setLevel(Level.parse(lis("LogLevel")));
 		return log;
 	}

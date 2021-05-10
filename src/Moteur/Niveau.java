@@ -21,6 +21,11 @@ public class Niveau extends Observable {
 
     }
 
+    public void initNiveau(boolean [][] g) {
+        grille = g;
+
+    }
+
     public void jouerCoup(Coup c) {
         if(!coupValide(c)) return;
         for(int i=c.l;i<hauteur;i++){
@@ -54,5 +59,9 @@ public class Niveau extends Observable {
     public void maj(){
         setChanged();
         notifyObservers();
+    }
+
+    public boolean[][] grille(){
+        return grille;
     }
 }

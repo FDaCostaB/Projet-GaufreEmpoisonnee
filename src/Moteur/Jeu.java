@@ -1,8 +1,5 @@
 package Moteur;
 
-
-import Global.Configuration;
-
 public class Jeu extends HistoriqueAPile<Commande> {
 	public Niveau niv;
 	private int height, width;
@@ -16,6 +13,14 @@ public class Jeu extends HistoriqueAPile<Commande> {
 		niv = new Niveau(l,c);
 		niv.initNiveau(height,width);
 		joueur = 0;
+	}
+
+	public Jeu( boolean [][] tab,int hauteur, int largeur) {
+
+		this.height = hauteur;
+		this.width = largeur;
+		niv = new Niveau(hauteur,largeur);
+		niv.initNiveau(tab);
 	}
 
 	public void reinitialiser(){
@@ -80,5 +85,7 @@ public class Jeu extends HistoriqueAPile<Commande> {
 		return height;
 	}
 
-
+	public boolean[][] grille(){
+		return niv.grille();
+	}
 }

@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9f08a49-1a87-452c-867c-5306ceecf8a2" name="Default Changelist" comment="IHM finalisé">
-      <change afterPath="$PROJECT_DIR$/src/IHM/AdaptateurTemps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Moteur/Commande.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Moteur/Couple.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Moteur/HistoriqueAPile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Moteur/Niveau.java" afterDir="false" />
+    <list default="true" id="f9f08a49-1a87-452c-867c-5306ceecf8a2" name="Default Changelist" comment="Historique en jeu fonctionnel">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controleur/CollecteurEvenements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controleur/CollecteurEvenements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controleur/ControleurMediateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controleur/ControleurMediateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controleur/IA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controleur/IA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controleur/IAAleatoire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controleur/IAAleatoire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IHM/AdaptateurInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IHM/AdaptateurInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IHM/GaufreGraphique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IHM/GaufreGraphique.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IHM/InterfaceGraphique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IHM/InterfaceGraphique.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Moteur/Coup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Moteur/Coup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projet-GaufreEmpoisonnee/gaufreEmpoisonee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Global/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Global/Configuration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Moteur/Jeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Moteur/Jeu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Moteur/Niveau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Moteur/Niveau.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,10 +42,10 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -131,7 +122,7 @@
       <workItem from="1620554521458" duration="3000" />
       <workItem from="1620555403003" duration="178000" />
       <workItem from="1620590978824" duration="380000" />
-      <workItem from="1620618755639" duration="6155000" />
+      <workItem from="1620618755639" duration="7359000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1620471842215</created>
@@ -168,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620554250529</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Historique en jeu fonctionnel">
+      <created>1620625199860</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1620625199860</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,7 +189,8 @@
     <MESSAGE value="Initial commit v3" />
     <MESSAGE value="Interface graphique en cours" />
     <MESSAGE value="IHM finalisé" />
-    <option name="LAST_COMMIT_MESSAGE" value="IHM finalisé" />
+    <MESSAGE value="Historique en jeu fonctionnel" />
+    <option name="LAST_COMMIT_MESSAGE" value="Historique en jeu fonctionnel" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -202,18 +201,13 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controleur/ControleurMediateur.java</url>
-          <line>116</line>
+          <line>118</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controleur/ControleurMediateur.java</url>
-          <line>72</line>
+          <line>74</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/IHM/InterfaceGraphique.java</url>
-          <line>185</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
